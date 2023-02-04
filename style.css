@@ -1,0 +1,323 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;500;600&display=swap');
+
+
+ /**
+
+ * CONTENTS
+ *
+ * GLOBAL VALUES...............General window sizing and font styling values.
+ *
+ * GENERAL LAYOUT...............Layout for containers, size and positioning.
+ *
+ * GENERAL FONT STYLING........fonts for page elements.
+ *
+ * MEDIA QUERIES.............Responsive styling of the page.
+
+ */
+
+
+
+
+
+
+ /*------------------------------------*\
+  #GLOBAL VALUES
+\*------------------------------------*/
+
+
+ *::before,
+ *::after,
+ * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+ }
+
+
+ body {
+    background: linear-gradient(180deg, rgb(53, 58, 107) 0%, rgb(1, 1, 8) 100%);
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 15px;
+    width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+
+ }
+
+
+
+
+
+ /*------------------------------------*\
+  #GENERAL LAYOUT 
+\*------------------------------------*/
+
+
+ main{
+    position: relative;
+    z-index: 3;
+ }
+
+
+/* BACKGROUND STYLING */
+
+
+ .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 1;
+ } 
+
+ .box {
+    width: 100vw;
+    height: 100vh;
+    border-left: 1px dashed rgba(245, 245, 245, 0.355);
+    border-right: 1px dashed rgba(245, 245, 245, 0.355);
+ }
+
+
+
+
+
+ /* music cards container */
+
+
+ .wrapper-content {
+    max-width: 1165px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px auto;
+ }
+
+
+ /* Individual card styling. */
+
+ .cards {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    height: 550px;
+    border-radius: 15px;
+    overflow: hidden;
+    /* border: 1px solid; */
+ }
+
+
+ /* poster/ablum cover section */
+
+
+ .poster-player {
+    width: 100%;
+    height: 35%;
+    position: relative;
+    overflow: hidden;
+ }
+
+ .poster-player img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
+ }
+
+ .ionicon {
+    width: 20px;
+    height: 20px;
+    fill: #FBFFFE;
+ }
+
+ .black {
+    fill: black;
+ }
+
+ a {
+    position: relative;
+    top: 70%;
+    left: 18px;
+    z-index: 4;
+    width: fit-content;
+    padding: 9px;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+      /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.2px);
+    -webkit-backdrop-filter: blur(6.2px);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+ }
+
+
+ /* Music cards content general styling */
+
+ .article-content {
+    width: 100%;
+    height: 65%;
+    padding: 25px 18px 18px;
+ }
+
+
+ .green {
+    background: #50998d;
+ }
+
+ .white {
+    background: #d6dabf;
+ }
+
+ .red {
+    background: #d97462;
+ }
+
+ .chinese {
+    background: #e0954a;
+ }
+
+ .gold {
+    background: #cda862;
+ }
+
+ .song-title,
+ .song-genre,
+ .song-description {
+    margin-bottom: 16px;
+ }
+
+ .album-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+ }
+
+ .song-details {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-self: center;
+    padding: 5px 0 ;
+ }
+
+ .border {
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+ }
+
+
+
+
+
+ /*------------------------------------*\
+  #GENERAL FONT STYLING
+\*------------------------------------*/
+
+
+ .song-title {
+    font-size: 25px;
+    font-weight: 600;
+ }
+
+ .song-genre {
+    text-transform: uppercase;
+    font-size: 12px;
+    opacity: 0.8;
+    font-weight: 500;
+ }
+
+ .song-description {
+    opacity: 0.6;
+    font-size: 14px;
+    font-weight: 300;
+ }
+
+ .time-stamp,
+ .song-name {
+    font-size: 14px;
+    font-weight: 600;
+ }
+
+ .song-codec {
+    font-size: 12px;
+    font-weight: 300;
+    text-align: end;
+    opacity: 0.8;
+ }
+
+
+
+
+
+ /*------------------------------------*\
+  #MEDIA QUERIES
+\*------------------------------------*/
+
+
+ @media screen and (min-width: 768px) {
+    .wrapper-content {
+        display: grid;
+        grid-template-columns: repeat(2, 280px);
+    }
+ }
+
+
+ @media screen and (min-width: 1440px) {
+
+    body{
+        display: grid;
+        place-content: center;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .wrapper-content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        padding: none;
+        margin: none;
+    }
+
+
+    /* Cards with spaces at the top */
+    
+    .end {
+        margin-top: 40px;
+    }
+
+
+    /* animation */
+
+    .ionicon {
+        transition: transform 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    .ionicon:hover{
+        transform: scale(1.5);
+    }
+
+    img {
+        transition: transform 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    img:hover {
+        transform: scale(1.5);
+    }
+    
+
+ }
+
+
+
+
+
+
+
