@@ -8,6 +8,9 @@ A project to showcase my HTML and CSS skills by creating responsive music cards 
 - Flexbox for flexible element positioning
 - Position property for precise positioning of elements
 
+## Links
+https://disney-banje.github.io/Music-cards/
+
 ## Purpose
 This project serves as a challenge for me to evaluate my HTML and CSS skills and improve my understanding of responsive design, CSS layout, and positioning techniques.
 
