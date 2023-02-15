@@ -75,8 +75,8 @@
  .box {
     width: 100%;
     min-height: 100%;
-    border-left: 0.0625rem dashed rgba(245, 245, 245, 0.355);
-    border-right: 0.0625rem dashed rgba(245, 245, 245, 0.355);
+    border-left: 0.0025rem dashed rgba(245, 245, 245, 0.099);
+    border-right: 0.0025rem dashed rgba(245, 245, 245, 0.099);
  }
 
 
